@@ -1,7 +1,49 @@
-controllers:
-    resource: ../src/Controller/
-    type: annotation
+# controllers:
+#     resource: ../src/Controller/
+#     type: attribute
 
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+# auth
+
+register:
+    path: /api/register
+    controller: App\Controller\AuthController::register
+
+api_login_check:
+    path: /api/login
+    controller: App\Controller\AuthController::login
+
+# product 
+
+show_product:
+    path: /api/product/{id}
+    controller: App\Controller\ProductController::showProduct
+
+# cart
+
+show_cart:
+    path: /api/cart
+    controller: App\Controller\OrderController::showCart
+
+add_product:
+    path: /api/cart/add
+    controller: App\Controller\OrderController::addProduct
+
+delete_product:
+    path: /api/cart/delete
+    controller: App\Controller\OrderController::deleteProduct
+
+# order
+
+create_order:
+    path: /api/order/create
+    controller: App\Controller\OrderController::createOrder
+
+create_invoice:
+    path: /api/order/invoice
+    controller: App\Controller\OrderController::createInvoice
+
+# email
+
+send_email:
+    path: /api/mail/send
+    controller: App\Controller\MailerController::sendEmail
